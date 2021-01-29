@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CalculadoraFisicaFinal</string>
+    <string name="Reflexion">Reflexión</string>
+    <string name="Refraccion">Refracción</string>
+    <string name="HintReflexionN">Número de imágenes que se forman</string>
+    <string name="HintReflexionA">Ángulo formado entre sí los espejos planos</string>
+    <string name="HintRefraccionA">Ángulo crítico</string>
+    <string name="HintRefraccionNa">Índice de refracción del aire</string>
+    <string name="HintRefraccionNm">Índice de refracción del medio</string>
+    <string name="ButtonCalc">Calcular</string>
+
+</resources>
