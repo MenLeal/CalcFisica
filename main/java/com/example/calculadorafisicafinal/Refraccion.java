@@ -4,56 +4,79 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Refraccion extends AppCompatActivity {
-    Button calc;
+public class Refraccion extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     TextView reslt;
-    EditText indairET;
-    EditText angcritET;
-    EditText indmedET;
-    Double ia;
-    Double ac;
-    Double im;
-    String indair;
-    String angcrit;
-    String indmed;
+    Button calc;
+    EditText indiceET;
+    EditText angrefET;
+    EditText angincET;
+    EditText velocidad1ET;
+    EditText velocidad2ET;
+    Double i;
+    Double ai;
+    Double ar;
+    Double c1;
+    Double c2;
+    String indice;
+    String angref;
+    String anginc;
+    String cone;
+    String ctwo;
     String result;
-    Boolean angc;
-    Boolean inda;
-    Boolean indm;
+    Boolean angi;
+    Boolean angr;
+    Boolean ind;
+    Boolean cuno;
+    Boolean cdos;
+    Spinner funcd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refraccion);
-        calc = (Button) findViewById(R.id.btnCalc);
+        funcd = (Spinner) findViewById(R.id.funciones);
         reslt = (TextView) findViewById(R.id.resultTxt);
-        angcritET = (EditText) findViewById(R.id.angulocET);
-        indairET = (EditText) findViewById(R.id.indiceairET);
-        indmedET =(EditText) findViewById(R.id.indicemedET);
+        calc = (Button) findViewById(R.id.btnCalc);
+        indiceET = (EditText) findViewById(R.id.indrefET);
+        angincET = (EditText) findViewById(R.id.sinincET);
+        angrefET = (EditText) findViewById(R.id.sinrefET);
+        velocidad1ET = (EditText) findViewById(R.id.vel1ET);
+        velocidad2ET = (EditText) findViewById(R.id.vel2ET);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.funcionde, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        funcd.setAdapter(adapter);
+        funcd.setOnItemSelectedListener(this);
 
-        calc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                angcrit = angcritET.getText().toString();
-                indair = indairET.getText().toString();
-                indmed = indmedET.getText().toString();
-                angc = angcrit.isEmpty();
-                inda = indair.isEmpty();
-                indm = indmed.isEmpty();
 
-                if (angc && !inda && !indm){
-                    ia = Double.parseDouble(indair);
-                    im = Double.parseDouble(indmed);
-                    ac = Math.asin(ia/im);
-                    result = String.valueOf(ac);
-                    Toast.makeText(Refraccion.this, result, Toast.LENGTH_LONG).show();
-                }
+    }
 
-            }
-        });
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String funcion = parent.getItemAtPosition(position).toString();
+        if (funcion.equals("Velocidad Luz")) {
+            angrefET.setVisibility(View.GONE);
+            angincET.setVisibility(View.GONE);
+            velocidad1ET.setVisibility(View.VISIBLE);
+            velocidad2ET.setVisibility(View.VISIBLE);
+        }
+        else if (funcion.equals("Ángulos")){
+            velocidad1ET.setVisibility(View.GONE);
+            velocidad2ET.setVisibility(View.GONE);
+            angrefET.setVisibility(View.VISIBLE);
+            angincET.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

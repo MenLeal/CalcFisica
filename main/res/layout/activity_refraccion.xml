@@ -8,41 +8,67 @@
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="154dp"
+        android:layout_height="69dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:src="@mipmap/refraccionf" />
+        android:src="@mipmap/refraccion2f" />
 
     <ImageView
-        android:layout_width="314dp"
-        android:layout_height="150dp"
+        android:layout_width="326dp"
+        android:layout_height="198dp"
         android:layout_gravity="center"
-        android:src="@mipmap/refracciond" />
+        android:src="@mipmap/refraccion2d" />
     <EditText
-        android:id="@+id/angulocET"
+        android:id="@+id/indrefET"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="@string/HintRefraccionA"/>
+        android:hint="@string/HintRefraccionN"/>
+    <Spinner
+        android:id="@+id/funciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
     <EditText
-        android:id="@+id/indiceairET"
+        android:id="@+id/sinincET"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="@string/HintRefraccionNa"/>
+        android:hint="@string/HintRefraccionAi"
+        android:visibility="gone"/>
     <EditText
-        android:id="@+id/indicemedET"
+        android:id="@+id/sinrefET"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="@string/HintRefraccionNm"/>
+        android:hint="@string/HintRefraccionAr"
+        android:visibility="gone"/>
+    <EditText
+        android:id="@+id/vel1ET"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/HintRefraccionV1"
+        android:visibility="gone"/>
+    <EditText
+        android:id="@+id/vel2ET"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/HintRefraccionV2"
+        android:visibility="gone"/>
     <Button
         android:id="@+id/btnCalc"
         android:layout_width="wrap_content"

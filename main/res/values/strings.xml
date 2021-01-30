@@ -5,8 +5,13 @@
     <string name="HintReflexionN">Número de imágenes que se forman</string>
     <string name="HintReflexionA">Ángulo formado entre sí los espejos planos</string>
     <string name="HintRefraccionA">Ángulo crítico</string>
-    <string name="HintRefraccionNa">Índice de refracción del aire</string>
-    <string name="HintRefraccionNm">Índice de refracción del medio</string>
+    <string name="HintReflexionNa">Índice de refracción del medio a</string>
+    <string name="HintReflexionNm">Índice de refracción del medio m</string>
+    <string name="HintRefraccionN">Indice de refracción</string>
+    <string name="HintRefraccionAi">Ángulo de Incidencia</string>
+    <string name="HintRefraccionAr">Ángulo de Refracción</string>
+    <string name="HintRefraccionV1">Velocidad de la luz en medio 1</string>
+    <string name="HintRefraccionV2">Velocidad de la luz en medio 2</string>
     <string name="ButtonCalc">Calcular</string>
 
 </resources>
