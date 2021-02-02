@@ -37,6 +37,7 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
     Boolean cuno;
     Boolean cdos;
     Spinner funcd;
+    private static final String dg= "°";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,12 +66,89 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
             angincET.setVisibility(View.GONE);
             velocidad1ET.setVisibility(View.VISIBLE);
             velocidad2ET.setVisibility(View.VISIBLE);
+
+            calc.setOnClickListener(v -> {
+                cone = velocidad1ET.getText().toString().trim();
+                ctwo = velocidad2ET.getText().toString().trim();
+                indice = indiceET.getText().toString().trim();
+                cuno = cone.isEmpty();
+                cdos = ctwo.isEmpty();
+                ind = indice.isEmpty();
+
+                if (ind && !cuno && !cdos){
+                    c1 = Double.parseDouble(cone);
+                    c2 = Double.parseDouble(ctwo);
+                    i = c1/c2;
+                    result =String.valueOf(i);
+                    reslt.setText(result);
+                }
+
+                else if (!ind && cuno && !cdos){
+                    i = Double.parseDouble(indice);
+                    c2 = Double.parseDouble(ctwo);
+                    c1 = i *c2;
+                    result = String.valueOf(c1);
+                    reslt.setText(result);
+                }
+
+                else if (!ind && !cuno && cdos){
+                    i = Double.parseDouble(indice);
+                    c1 = Double.parseDouble(cone);
+                    c2 = c1/i;
+                    result = String.valueOf(c2);
+                    reslt.setText(result);
+                }
+
+
+
+            });
+
         }
         else if (funcion.equals("Ángulos")){
             velocidad1ET.setVisibility(View.GONE);
             velocidad2ET.setVisibility(View.GONE);
             angrefET.setVisibility(View.VISIBLE);
             angincET.setVisibility(View.VISIBLE);
+
+            calc.setOnClickListener(v -> {
+                indice = indiceET.getText().toString().trim();
+                anginc = angincET.getText().toString().trim();
+                angref = angrefET.getText().toString().trim();
+
+                ind = indice.isEmpty();
+                angi = anginc.isEmpty();
+                angr = angref.isEmpty();
+
+                if (ind && !angi && !angr){
+                    ai = Double.parseDouble(anginc);
+                    ar = Double.parseDouble(angref);
+                    ai = Math.toRadians(ai);
+                    ar = Math.toRadians(ar);
+                    i = (Math.sin(ai))/(Math.sin(ar));
+                    result = String.valueOf(i);
+                    reslt.setText(result);
+                }
+                else if (!ind && angi && !angr){
+                    i = Double.parseDouble(indice);
+                    ar = Double.parseDouble(angref);
+                    ar = Math.toRadians(ar);
+                    ai = i*Math.sin(ar);
+                    ai = Math.asin(ai);
+                    ai = Math.toDegrees(ai);
+                    result = String.valueOf(ai);
+                    reslt.setText(result+dg);
+                }
+                else if (!ind && !angi && angr){
+                    i = Double.parseDouble(indice);
+                    ai = Double.parseDouble(anginc);
+                    ai = Math.toRadians(ai);
+                    ar = Math.sin(ai)/i;
+                    ar = Math.asin(ar);
+                    ar = Math.toDegrees(ar);
+                    result = String.valueOf(ar);
+                    reslt.setText(result+dg);
+                }
+            });
         }
 
     }

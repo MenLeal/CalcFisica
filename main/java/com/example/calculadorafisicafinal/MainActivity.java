@@ -18,18 +18,12 @@ GridLayout mainGrid;
         mainGrid = findViewById(R.id.gridTemas);
 
         CardView reflexion = (CardView) mainGrid.getChildAt(0);
-        reflexion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Reflexion.class));
-            }
-        });
+        reflexion.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,Reflexion.class)));
         CardView refraccion = (CardView) mainGrid.getChildAt(1);
-        refraccion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Refraccion.class));
-            }
+        refraccion.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,Refraccion.class)));
+        CardView resistencia = (CardView) mainGrid.getChildAt(2);
+        resistencia.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, Resistencia.class));
         });
 
 

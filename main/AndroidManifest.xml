@@ -9,9 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculadoraFisicaFinal">
-        <activity android:name=".Refraccion"
+        <activity
+            android:name=".Refraccion"
             android:label="@string/Refraccion"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Resistencia"
+            android:label="@string/Resist"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Reflexion"
             android:label="@string/Reflexion"

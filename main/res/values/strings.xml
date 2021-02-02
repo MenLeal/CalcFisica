@@ -2,16 +2,32 @@
     <string name="app_name">CalculadoraFisicaFinal</string>
     <string name="Reflexion">Reflexión</string>
     <string name="Refraccion">Refracción</string>
+    <string name="RfL">Refracción de la Luz</string>
+    <string name="RfcL">Reflexión de la Luz</string>
+    <string name="Resist">Resistencia Eléctrica</string>
+    <string name="IntCamp">Intensidad del Campo Eléctrico</string>
+    <string name="PotElec">Potencial Eléctrico</string>
+    <string name="LeyOhm">Ley de Ohm</string>
     <string name="HintReflexionN">Número de imágenes que se forman</string>
     <string name="HintReflexionA">Ángulo formado entre sí los espejos planos</string>
     <string name="HintRefraccionA">Ángulo crítico</string>
     <string name="HintReflexionNa">Índice de refracción del medio a</string>
     <string name="HintReflexionNm">Índice de refracción del medio m</string>
     <string name="HintRefraccionN">Indice de refracción</string>
-    <string name="HintRefraccionAi">Ángulo de Incidencia</string>
-    <string name="HintRefraccionAr">Ángulo de Refracción</string>
-    <string name="HintRefraccionV1">Velocidad de la luz en medio 1</string>
-    <string name="HintRefraccionV2">Velocidad de la luz en medio 2</string>
+    <string name="HintRefraccionAi">Ángulo de Incidencia (°)</string>
+    <string name="HintRefraccionAr">Ángulo de Refracción (°)</string>
+    <string name="HintRefraccionV1">Velocidad de la luz en medio 1 (km/s)</string>
+    <string name="HintRefraccionV2">Velocidad de la luz en medio 2 (km/s)</string>
+    <string name="HintResistenciaResult">Resistencia (Ω)</string>
+    <string name="HintResistenciaRho">Resistividad (Ωm)</string>
+    <string name="HintResistenciaL">Longitud del conductor (m)</string>
+    <string name="HintResistenciaA">Área transversal del conductor (m2)</string>
+    <string name="HintResistencia0">Resistencia inicial (Ω)</string>
+    <string name="HintResistenciaF">Resistencia final (Ω)</string>
     <string name="ButtonCalc">Calcular</string>
+    <string name="HintResistenciaAlpha">Coeficiente de temperatura (1/°C)</string>
+    <string name="HintResistenciaTemp">Temperatura inicial (°C)</string>
+    <string name="HintResistenciaFin">Temperatura final (°C)</string>
+
 
 </resources>
