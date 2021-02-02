@@ -59,10 +59,11 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
     Boolean tf;
     private static final String al ="Longitud/Área";
     private static final String ohms = " Ω";
-    private static final String dg = "°";
     private static final String ohms_m=" Ω-m";
     private static final String m = " m";
     private static final String m2 = " m^2";
+    private static final String dg = "°C";
+    private static final String alp = "1/°C";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,6 +164,65 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
             resistividadET.setVisibility(View.GONE);
             longitudET.setVisibility(View.GONE);
             areaET.setVisibility(View.GONE);
+            calc.setOnClickListener(v -> {
+                resistenciaInitS = resistencinitET.getText().toString().trim();
+                resistenciaFinS = resistenciafinET.getText().toString().trim();
+                resistenciaAlpS = resistenciaAET.getText().toString().trim();
+                tempInitS = temInitET.getText().toString().trim();
+                tempFinS = temFinET.getText().toString().trim();
+                ri = resistenciaInitS.isEmpty();
+                rf = resistenciaFinS.isEmpty();
+                ra = resistenciaAlpS.isEmpty();
+                ti = tempInitS.isEmpty();
+                tf = tempFinS.isEmpty();
+
+                if (rf & !ri && !ra && !ti && !tf){
+                   resistencinit = Double.parseDouble(resistenciaInitS);
+                   resistenciaAlp = Double.parseDouble(resistenciaAlpS);
+                   temInit = Double.parseDouble(tempInitS);
+                   temFin = Double.parseDouble(tempFinS);
+                   resistenciafin = resistencinit * (1+resistenciaAlp*(temFin-temInit));
+                   resultado = resistenciafin + ohms;
+                   result.setText(resultado);
+                }
+                else if (!rf && ri && !ra && !ti && !tf){
+                    resistenciafin = Double.parseDouble(resistenciaFinS);
+                    resistenciaAlp = Double.parseDouble(resistenciaAlpS);
+                    temInit = Double.parseDouble(tempInitS);
+                    temFin = Double.parseDouble(tempFinS);
+                    resistencinit = resistenciafin/(1+(resistenciaAlp * (temFin-temInit)));
+                    resultado = resistencinit + ohms;
+                    result.setText(resultado);
+                }
+                else if (!rf && !ri && ra && !ti && !tf){
+                    resistencinit = Double.parseDouble(resistenciaInitS);
+                    resistenciafin = Double.parseDouble(resistenciaFinS);
+                    temInit = Double.parseDouble(tempInitS);
+                    temFin = Double.parseDouble(tempFinS);
+                    resistenciaAlp = ((resistenciafin/resistencinit) - 1)/(temFin-temInit);
+                    resultado = resistenciaAlp + alp;
+                    result.setText(resultado);
+                }
+                else if (!rf && !ri && !ra && ti && !tf){
+                    resistencinit = Double.parseDouble(resistenciaInitS);
+                    resistenciafin = Double.parseDouble(resistenciaFinS);
+                    resistenciaAlp = Double.parseDouble(resistenciaAlpS);
+                    temFin = Double.parseDouble(tempFinS);
+                    temInit = ((resistenciafin-resistencinit)/(resistenciaAlp*resistencinit))-temFin;
+                    temInit = temInit*(-1);
+                    resultado = temInit+dg;
+                    result.setText(resultado);
+                }
+                else if (!ri && !rf && !ra && !ti && tf){
+                    resistencinit = Double.parseDouble(resistenciaInitS);
+                    resistenciafin = Double.parseDouble(resistenciaFinS);
+                    resistenciaAlp = Double.parseDouble(resistenciaAlpS);
+                    temInit = Double.parseDouble(tempInitS);
+                    temFin = ((resistenciafin-resistencinit)/(resistenciaAlp*resistencinit))+temInit;
+                    resultado = temFin + dg;
+                    result.setText(resultado);
+                }
+            });
         }
     }
 
