@@ -10,7 +10,7 @@
     <string name="LeyOhm">Ley de Ohm</string>
     <string name="HintReflexionN">Número de imágenes que se forman</string>
     <string name="HintReflexionA">Ángulo formado entre sí los espejos planos</string>
-    <string name="HintRefraccionA">Ángulo crítico</string>
+    <string name="HintReflexA">Ángulo crítico</string>
     <string name="HintReflexionNa">Índice de refracción del medio a</string>
     <string name="HintReflexionNm">Índice de refracción del medio m</string>
     <string name="HintRefraccionN">Indice de refracción</string>

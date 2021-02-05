@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -90,7 +91,10 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
         funciones.setAdapter(adapter);
         funciones.setOnItemSelectedListener(this);
     }
-
+    private void ocultarKeyB(){
+        InputMethodManager inputMethodManager =  (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+    }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String funcion = parent.getItemAtPosition(position).toString();
@@ -124,6 +128,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                     resistencia = resistividad * (longitud/area);
                     resultado = resistencia + ohms;
                     result.setText(resultado);
+                    ocultarKeyB();
                 }
                 else if (!r && rst && !l && !a){
                     resistencia = Double.parseDouble(resistenciaS);
@@ -132,6 +137,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                     resistividad = (resistencia * area)/longitud;
                     resultado = resistividad + ohms_m;
                     result.setText(resultado);
+                    ocultarKeyB();
                 }
                 else if (!r && !rst && l && !a){
                     resistencia = Double.parseDouble(resistenciaS);
@@ -140,6 +146,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                     longitud = (resistencia * area)/resistividad;
                     resultado = longitud + m;
                     result.setText(resultado);
+                    ocultarKeyB();
                 }
                 else if (!r && !rst && !l && a){
                     resistencia = Double.parseDouble(resistenciaS);
@@ -148,6 +155,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                     area = (resistividad * longitud)/resistencia;
                     resultado = area + m2;
                     result.setText(resultado);
+                    ocultarKeyB();
                 }
             });
         }else{
@@ -184,6 +192,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                    resistenciafin = resistencinit * (1+resistenciaAlp*(temFin-temInit));
                    resultado = resistenciafin + ohms;
                    result.setText(resultado);
+                   ocultarKeyB();
                 }
                 else if (!rf && ri && !ra && !ti && !tf){
                     resistenciafin = Double.parseDouble(resistenciaFinS);
@@ -193,6 +202,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                     resistencinit = resistenciafin/(1+(resistenciaAlp * (temFin-temInit)));
                     resultado = resistencinit + ohms;
                     result.setText(resultado);
+                    ocultarKeyB();
                 }
                 else if (!rf && !ri && ra && !ti && !tf){
                     resistencinit = Double.parseDouble(resistenciaInitS);
@@ -202,6 +212,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                     resistenciaAlp = ((resistenciafin/resistencinit) - 1)/(temFin-temInit);
                     resultado = resistenciaAlp + alp;
                     result.setText(resultado);
+                    ocultarKeyB();
                 }
                 else if (!rf && !ri && !ra && ti && !tf){
                     resistencinit = Double.parseDouble(resistenciaInitS);
@@ -212,6 +223,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                     temInit = temInit*(-1);
                     resultado = temInit+dg;
                     result.setText(resultado);
+                    ocultarKeyB();
                 }
                 else if (!ri && !rf && !ra && !ti && tf){
                     resistencinit = Double.parseDouble(resistenciaInitS);
@@ -221,6 +233,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                     temFin = ((resistenciafin-resistencinit)/(resistenciaAlp*resistencinit))+temInit;
                     resultado = temFin + dg;
                     result.setText(resultado);
+                    ocultarKeyB();
                 }
             });
         }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -54,8 +55,6 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         funcd.setAdapter(adapter);
         funcd.setOnItemSelectedListener(this);
-
-
     }
 
     @Override
@@ -88,6 +87,7 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
                     c1 = i *c2;
                     result = String.valueOf(c1);
                     reslt.setText(result);
+                    ocultarKeyB();
                 }
                 else if (!ind && !cuno && cdos){
                     i = Double.parseDouble(indice);
@@ -95,6 +95,7 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
                     c2 = c1/i;
                     result = String.valueOf(c2);
                     reslt.setText(result);
+                    ocultarKeyB();
                 }
 
             });
@@ -123,6 +124,7 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
                     i = (Math.sin(ai))/(Math.sin(ar));
                     result = String.valueOf(i);
                     reslt.setText(result);
+                    ocultarKeyB();
                 }
                 else if (!ind && angi && !angr){
                     i = Double.parseDouble(indice);
@@ -133,6 +135,7 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
                     ai = Math.toDegrees(ai);
                     result = String.valueOf(ai);
                     reslt.setText(result+dg);
+                    ocultarKeyB();
                 }
                 else if (!ind && !angi && angr){
                     i = Double.parseDouble(indice);
@@ -143,6 +146,7 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
                     ar = Math.toDegrees(ar);
                     result = String.valueOf(ar);
                     reslt.setText(result+dg);
+                    ocultarKeyB();
                 }
             });
         }
@@ -151,5 +155,10 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    private void ocultarKeyB(){
+        InputMethodManager inputMethodManager =  (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
     }
 }

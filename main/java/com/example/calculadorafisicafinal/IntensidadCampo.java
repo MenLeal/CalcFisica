@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -60,6 +61,11 @@ public class IntensidadCampo extends AppCompatActivity implements AdapterView.On
         kc = k.doubleValue();
     }
 
+    private void ocultarKeyB(){
+        InputMethodManager inputMethodManager =  (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String funcion = parent.getItemAtPosition(position).toString();
@@ -82,6 +88,7 @@ public class IntensidadCampo extends AppCompatActivity implements AdapterView.On
                     V1 = V2/V3;
                     result = V1+intcamp;
                     resultado.setText(result);
+                    ocultarKeyB();
                 }
                 else if (!vone && vtwo && !vthree){
                     V1 = Double.parseDouble(v1);
@@ -89,6 +96,7 @@ public class IntensidadCampo extends AppCompatActivity implements AdapterView.On
                     V2 = V1*V3;
                     result = V2+frz;
                     resultado.setText(result);
+                    ocultarKeyB();
                 }
                 else if (!vone && !vtwo && vthree){
                     V1 = Double.parseDouble(v1);
@@ -96,6 +104,7 @@ public class IntensidadCampo extends AppCompatActivity implements AdapterView.On
                     V3 = V2/V1;
                     result = V3+cg;
                     resultado.setText(result);
+                    ocultarKeyB();
                 }
             });
         }else{
@@ -116,6 +125,7 @@ public class IntensidadCampo extends AppCompatActivity implements AdapterView.On
                     V1 = (kc *V2)/(V3*V3);
                     result = V1+intcamp;
                     resultado.setText(result);
+                    ocultarKeyB();
                 }
                 else if (!vone && vtwo && !vthree){
                     V1 = Double.parseDouble(v1);
@@ -123,6 +133,7 @@ public class IntensidadCampo extends AppCompatActivity implements AdapterView.On
                     V2 = (V1*V3*V3)/kc;
                     result = V2+frz;
                     resultado.setText(result);
+                    ocultarKeyB();
                 }
                 else if (!vone && !vtwo && vthree){
                     V1 = Double.parseDouble(v1);
@@ -131,6 +142,7 @@ public class IntensidadCampo extends AppCompatActivity implements AdapterView.On
                     V3 = Math.pow(V3,0.5);
                     result = V3+m;
                     resultado.setText(result);
+                    ocultarKeyB();
                 }
             });
         }

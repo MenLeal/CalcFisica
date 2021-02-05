@@ -6,23 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Reflexion"
     android:orientation="vertical">
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+            <Spinner
+                android:id="@+id/funcionesReflex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
             <ImageView
+                android:id="@+id/img1"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/reflexionf"
                 android:layout_gravity="center"/>
             <ImageView
+                android:id="@+id/img2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/reflexiond"
                 android:layout_gravity="center"
                 android:scaleType="centerInside"
                 android:layout_marginBottom="10dp"/>
@@ -32,25 +35,22 @@
                 android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:hint="@string/HintReflexionN"/>
+                android:inputType="numberDecimal"/>
             <EditText
                 android:id="@+id/angulosespET"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+            <EditText
+                android:id="@+id/angulocET"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:hint="@string/HintReflexionA"/>
-            <Button
-                android:id="@+id/btnCalc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ButtonCalc"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_gravity="right"/>
+                android:visibility="gone"/>
             <TextView
                 android:id="@+id/resultTxt"
                 android:layout_width="wrap_content"
@@ -59,60 +59,18 @@
                 android:textColor="@color/Main"
                 android:fontFamily="serif-monospace"
                 android:layout_gravity="center"/>
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnCalc"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:src="@mipmap/refraccionf" />
-
-                <ImageView
-                    android:layout_width="314dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center"
-                    android:src="@mipmap/refracciond" />
-                <EditText
-                    android:id="@+id/angulocET"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:hint="@string/HintRefraccionA"/>
-                <EditText
-                    android:id="@+id/indiceairET"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:hint="@string/HintReflexionNa"/>
-                <EditText
-                    android:id="@+id/indicemedET"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:hint="@string/HintReflexionNm"/>
-                <Button
-                    android:id="@+id/btnCalc2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ButtonCalc"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="right"/>
-            </LinearLayout>
+                android:text="@string/ButtonCalc"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"/>
         </LinearLayout>
     </ScrollView>
-
-
-
-
-
 </LinearLayout>
+
+
+
+
+
