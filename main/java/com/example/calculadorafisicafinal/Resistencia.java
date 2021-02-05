@@ -145,7 +145,7 @@ public class Resistencia extends AppCompatActivity implements AdapterView.OnItem
                     resistencia = Double.parseDouble(resistenciaS);
                     resistividad = Double.parseDouble(resistividadS);
                     longitud = Double.parseDouble(longitudS);
-                    area = (resistividad * longitud)/longitud;
+                    area = (resistividad * longitud)/resistencia;
                     resultado = area + m2;
                     result.setText(resultado);
                 }

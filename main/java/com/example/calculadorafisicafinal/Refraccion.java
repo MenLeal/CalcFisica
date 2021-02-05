@@ -82,7 +82,6 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
                     result =String.valueOf(i);
                     reslt.setText(result);
                 }
-
                 else if (!ind && cuno && !cdos){
                     i = Double.parseDouble(indice);
                     c2 = Double.parseDouble(ctwo);
@@ -90,7 +89,6 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
                     result = String.valueOf(c1);
                     reslt.setText(result);
                 }
-
                 else if (!ind && !cuno && cdos){
                     i = Double.parseDouble(indice);
                     c1 = Double.parseDouble(cone);
@@ -99,12 +97,10 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
                     reslt.setText(result);
                 }
 
-
-
             });
 
         }
-        else if (funcion.equals("Ángulos")){
+        else {
             velocidad1ET.setVisibility(View.GONE);
             velocidad2ET.setVisibility(View.GONE);
             angrefET.setVisibility(View.VISIBLE);
@@ -155,6 +151,5 @@ public class Refraccion extends AppCompatActivity implements AdapterView.OnItemS
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }

@@ -28,6 +28,11 @@
     <string name="HintResistenciaAlpha">Coeficiente de temperatura (1/°C)</string>
     <string name="HintResistenciaTemp">Temperatura inicial (°C)</string>
     <string name="HintResistenciaFin">Temperatura final (°C)</string>
+    <string name="HintIntCamp">Intensidad del Campo Eléctrico (N/C)</string>
+    <string name="HintIntCampF">Fuerza (N)</string>
+    <string name="HintIntCampC">Carga (C)</string>
+    <string name="HintIntCamR">Radio (m2)</string>
+
 
 
 </resources>

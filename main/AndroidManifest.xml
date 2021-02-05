@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculadoraFisicaFinal">
         <activity
+            android:name=".IntensidadCampo"
+            android:label="@string/IntCamp"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".Refraccion"
             android:label="@string/Refraccion"
             android:parentActivityName=".MainActivity" />
@@ -26,6 +30,7 @@
             android:theme="@style/Theme.CalculadoraFisicaFinalNo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

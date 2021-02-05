@@ -25,7 +25,10 @@ GridLayout mainGrid;
         resistencia.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, Resistencia.class));
         });
-
+        CardView intensidad = (CardView) mainGrid.getChildAt(3);
+        intensidad.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, IntensidadCampo.class));
+        });
 
 
     }
