@@ -29,6 +29,10 @@ GridLayout mainGrid;
         intensidad.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, IntensidadCampo.class));
         });
+        CardView potencial = (CardView) mainGrid.getChildAt(4);
+        potencial.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, PotencialElectrico.class));
+        });
 
 
     }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="funcionpot">
+        <item>Energía Potencial</item>
+        <item>Carga Eléctrica</item>
+        <item>Campo Eléctrico</item>
+    </string-array>
+</resources>
