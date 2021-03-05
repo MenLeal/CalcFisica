@@ -9,13 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculadoraFisicaFinal">
-        <activity android:name=".PotencialElectrico"
-            android:label="@string/PotElec"
+        <activity android:name=".LeydeOhm"
+            android:label="@string/LeyOhm"
             android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".PotencialElectrico"
+            android:label="@string/PotElec"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".IntensidadCampo"
             android:label="@string/IntCamp"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Refraccion"
             android:label="@string/Refraccion"

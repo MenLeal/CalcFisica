@@ -36,8 +36,7 @@
     <string name="HintPotencialEng">Energía Potencial (J)</string>
     <string name="HintPotencialE">Intensidad del campo eléctrico (V/m)</string>
     <string name="HintPotenciaD">Distancia (m)</string>
-
-
-
-
+    <string name ="HintIntensidad">Corriente (A)</string>
+    <string name="HintCircuitos">Valores separados por un espacio</string>
+    <string name="HintCircuitosN">Número de Resistencias</string>
 </resources>

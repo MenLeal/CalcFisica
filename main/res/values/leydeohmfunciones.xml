@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="funcionleydeohm">
+        <item>Formula</item>
+        <item>Circuito en Serie</item>
+        <item>Circuito en Paralelo</item>
+    </string-array>
+</resources>

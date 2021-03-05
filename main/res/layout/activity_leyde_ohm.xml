@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LeydeOhm">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+          <Spinner
+              android:id="@+id/funciones"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"/>
+
+          <ImageView
+              android:id="@+id/img1"
+              android:layout_width="169dp"
+              android:layout_height="75dp"
+              android:layout_gravity="center" />
+
+          <ImageView
+              android:id="@+id/img2"
+              android:layout_width="361dp"
+              android:layout_height="112dp"
+              android:layout_gravity="center"
+              android:src="@mipmap/leydeohm3d" />
+          <EditText
+              android:id="@+id/et1"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="numberDecimal"/>
+          <EditText
+              android:id="@+id/et2"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="numberDecimal"/>
+          <EditText
+              android:id="@+id/et3"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="numberDecimal"/>
+          <TextView
+              android:id="@+id/resultTxt"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="40sp"
+              android:textColor="@color/Main"
+              android:fontFamily="serif-monospace"
+              android:layout_gravity="center"/>
+          <Button
+              android:id="@+id/btnCalc"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/ButtonCalc"
+              android:layout_marginRight="10dp"
+              android:layout_gravity="right"/>
+      </LinearLayout>
+    </ScrollView>
+</LinearLayout>

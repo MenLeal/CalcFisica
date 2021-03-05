@@ -33,7 +33,10 @@ GridLayout mainGrid;
         potencial.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, PotencialElectrico.class));
         });
-
+        CardView leydeohm = (CardView) mainGrid.getChildAt(5);
+        leydeohm.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, LeydeOhm.class));
+        });
 
     }
 }
